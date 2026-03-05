@@ -58,10 +58,11 @@ jobs:
              sed -i 's/chat\.php/chat\.html/g' js/script.js 2>/dev/null || true
           fi
 
-          # Copy assets, CSS, JS to dist
+          # Copy assets, CSS, JS, and JSON data to dist
           cp -r assets dist/ 2>/dev/null || true
           cp -r css dist/ 2>/dev/null || true
           cp -r js dist/ 2>/dev/null || true
+          cp *.json dist/ 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
